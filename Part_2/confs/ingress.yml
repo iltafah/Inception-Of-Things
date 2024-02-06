@@ -1,0 +1,52 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress
+  namespace: default
+  annotations:
+    #ingress.kubernetes.io/add-base-url: "true"
+    #nginx.ingress.kubernetes.io/use-regex: "true"    
+    #nginx.ingress.kubernetes.io/rewrite-target: /Enjine/$1
+spec:
+  rules:
+  - host:   # Replace with your desired hostname
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: app-one
+            port:
+              number: 80
+
+#  - host: app2.com  # Replace with your desired hostname
+#    http:
+#      paths:
+#      - pathType: Prefix
+#        path: /
+#        backend:
+#          service:
+#            name: app-two
+#            port:
+#              number: 80
+#  - host: app3.com  # Replace with your desired hostname
+#    http:
+#      paths:
+#      - pathType: Prefix
+#        path: /
+#        backend:
+#          service:
+#            name: app-three
+#            port:
+#              number: 8081
+#  - host:     
+#    http:
+#      paths:
+#      - pathType: Prefix
+#        path: /
+#        backend:
+#          service:
+#            name: app-three
+#            port:
+#              number: 8080
