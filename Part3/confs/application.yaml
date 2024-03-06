@@ -6,4 +6,5 @@ source:
 destination:
   server: 'https://kubernetes.default.svc'
   namespace: dev
-
+syncPolicy:
+  automated: {}
