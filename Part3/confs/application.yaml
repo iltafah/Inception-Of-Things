@@ -1,0 +1,9 @@
+project: default
+source:
+  repoURL: 'https://github.com/iltafah/iot-test.git'
+  path: wil-app
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: dev
+
