@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www":{"create":true,"guestpath":"/var/www","hostpath":"/Users/iltafah/Desktop/Inception-Of-Things/p1/confs","disabled":false,"__vagrantfile":true}}}
