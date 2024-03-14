@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
 
   # Server Worker
-  config.vm.define "Master" do |master|
+  config.vm.define "iltafahS" do |master|
 
     master.vm.box = "generic/centos7"
     master.vm.hostname = "iltafahS"
@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
   end
 
   # Client Worker
-  config.vm.define "Slave" do |slave|
+  config.vm.define "iltafahSW" do |slave|
 
     slave.vm.box = "generic/centos7"
     slave.vm.hostname = "iltafahSW"

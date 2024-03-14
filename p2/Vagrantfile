@@ -1,17 +1,20 @@
 Vagrant.configure("2") do |config|
- 
-  config.vm.define "Master" do |master|
+
+  config.vm.define "iltafahS" do |master|
+
     master.vm.box = "generic/centos7"
     master.vm.hostname = "iltafahS"
-    master.vm.network :private_network, ip: "192.168.56.0"
+    
+    master.vm.network :private_network, ip: "192.168.56.110"
+    master.vm.network :forwarded_port, guest: 80, host: 8080
+
     master.vm.provision "shell", path: "scripts/k3sInstall.sh"  
- 
     master.vm.synced_folder "./confs", "/var/www", create: true
 
-    master.vm.provider "virtualbox" do |v|
-      v.name = "iltafahS"
-      v.memory = "1024"
-      v.cpus = "2"
+    master.vm.provider "virtualbox" do |vb|
+      vb.name = "iltafahS"
+      vb.memory = "1024"
+      vb.cpus = "2"
     end
   
   end
